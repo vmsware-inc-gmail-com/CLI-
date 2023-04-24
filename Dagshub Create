@@ -1,0 +1,7 @@
+pip3 install dagshub scikit-learn pandas
+dagshub repo create hello-dagshub --upload-data https://dagshub.com/DagsHub/Onboarding/raw/main/data/enron.csv --clone
+cd hello-dagshub
+python3 -c "import httpx; open('code.py', 'w').write(httpx.get('https://dagshub.com/DagsHub/Onboarding/raw/main/code.py').text)"
+git add .
+git commit -m 'Added code to my new repo!'
+git push origin main
